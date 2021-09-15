@@ -6,13 +6,15 @@
 /*   By: sozcan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 17:15:34 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/14 14:43:24 by sozcan           ###   ########.fr       */
+/*   Updated: 2021/09/15 18:45:53 by sozcan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include <string.h>
+
+size_t	ft_strlen(const char *str)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	while (str[len])
