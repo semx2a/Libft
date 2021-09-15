@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sozcan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/13 17:15:34 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/14 14:43:24 by sozcan           ###   ########.fr       */
+/*   Created: 2021/09/14 14:48:41 by sozcan            #+#    #+#             */
+/*   Updated: 2021/09/14 15:04:47 by sozcan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+char	*ft_strchr(char *s, int c)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return (&s[i]);
+		i++;
+	}
+	return (NULL);
 }
