@@ -6,7 +6,7 @@
 /*   By: sozcan <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 14:34:16 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/15 20:12:54 by sozcan           ###   ########.fr       */
+/*   Updated: 2021/09/20 16:22:08 by sozcan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ int	main()
 	printf("the value of strchr is %s\n", strchr(s, c));
 }
 
-#include <libc.h>
-
 int	main(int ac, char **av)
 {
 	(void)ac;
@@ -42,8 +40,6 @@ int	main(int ac, char **av)
 	printf("the value of ft_strnstr is '%s'\n", ft_strnstr(av[1], av[2], atoi(av[3])));
 	printf("the value of strnstr is '%s'\n", strnstr(av[1], av[2], atoi(av[3])));
 }
-
-#include <libc.h>
 
 int	main(int ac, char **av)
 {
@@ -53,8 +49,6 @@ int	main(int ac, char **av)
 	printf("the value of strchr is '%s'\n", strchr(av[1], atoi(av[2])));
 }
 
-#include <libc.h>
-
 int	main(int ac, char **av)
 {
 	(void)ac;
@@ -63,3 +57,23 @@ int	main(int ac, char **av)
 	printf("the value of strncmp is %d\n", strncmp(av[1], av[2], atoi(av[3])));
 }
 
+int	main(int ac, char **av)
+{
+	(void)ac;
+	printf("the value of ft_strlcat is %lu\n", ft_strlcat(av[1], av[2], strlen(av[1])));
+	printf("the value of strlcat is %lu\n", strlcat(av[3], av[4], strlen(av[3])));
+}
+
+int	main(int ac, char **av)
+{
+	(void)ac;
+	printf("the value of ft_strlcpy is %lu\n", ft_strlcpy(av[1], av[2], strlen(av[1])));
+	printf("the value of strlcpy is %lu\n", strlcpy(av[3], av[4], strlen(av[3])));
+}
+
+int	main(int ac, char **av)
+{
+	(void)ac;
+	printf("ft_atoi returns %d\n", ft_atoi(av[1]));
+	printf("atoi returns %d\n", atoi(av[1]));
+}
