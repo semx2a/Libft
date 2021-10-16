@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 15:32:09 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/13 15:32:12 by seozcan          ###   ########.fr       */
+/*   Created: 2021/10/04 15:25:53 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/12 13:43:18 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <strings.h>
+
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
+	char	*str;
+	size_t	i;
+
+	i = 0;
+	str = (char *)s;
+	while (str[i] && i <= n)
 	{
-		c = c - 32;
-		return (c);
+		str[i] = '\0';
+		i++;
 	}
-	return (c);
 }

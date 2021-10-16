@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sozcan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 14:48:41 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/15 19:53:52 by sozcan           ###   ########.fr       */
+/*   Created: 2021/10/12 13:51:07 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/13 15:40:05 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 
 	i = 0;
-	while (s[i])
+	while (str[i])
 	{
-		if (s[i] == c)
-			return (&s[i]);
+		if (str[i] == c)
+			return ((char *)s + i);
 		i++;
 	}
 	return (NULL);

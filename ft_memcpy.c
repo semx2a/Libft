@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 15:32:09 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/13 15:32:12 by seozcan          ###   ########.fr       */
+/*   Created: 2021/10/14 17:04:45 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/16 16:30:05 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <string.h>
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = c - 32;
-		return (c);
-	}
-	return (c);
+	char		*d;
+	const char	*s;
+
+	d = dst;
+	s = src;
+	while (n--)
+		*d++ = *s++;
+	return (dst);
 }

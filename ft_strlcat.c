@@ -3,41 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sozcan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 17:01:38 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/18 17:58:00 by sozcan           ###   ########.fr       */
+/*   Created: 2021/10/12 14:07:28 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/12 16:44:52 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-#include <libc.h>
-size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
+	char	*str;
 
 	i = 0;
 	j = 0;
+	str = (char *)src;
 	while (dst[i])
 		i++;
-	while (src[j] && j < (dstsize - 1))
+	while (str[j] && i + j < (dstsize - 1))
 	{
-		dst[i] = src[j];
+		dst[i + j] = str[j];
 		j++;
-		i++;
 	}
-	dst[i] = '\0';
-	if (j >= dstsize)
-		return (0);		
-	return (i);
-}
-
-
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("the value of ft_strlcat is %lu\n", ft_strlcat(av[1], av[2], strlen(av[1])));
-	printf("the value of strlcat is %lu\n", strlcat(av[3], av[4], strlen(av[3])));
+	dst[i + j] = '\0';
+	while (str[j])
+		j++;
+	if (i + j >= dstsize)
+		return (dstsize + j);
+	return (dstsize + j);
 }

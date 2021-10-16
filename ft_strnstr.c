@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sozcan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 12:33:40 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/15 20:32:32 by sozcan           ###   ########.fr       */
+/*   Created: 2021/10/13 14:43:01 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/13 14:54:00 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strnstr(char *haystack, char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -20,14 +20,14 @@ char	*ft_strnstr(char *haystack, char *needle, size_t len)
 	i = 0;
 	j = 0;
 	if (!needle[i])
-		return (haystack);
+		return ((char *)haystack);
 	while (haystack[i])
 	{
 		j = 0;
 		while (haystack[i] == needle[j] && i < len)
 		{
 			if (!needle[j + 1])
-				return (haystack + (i - j));
+				return ((char *)haystack + (i - j));
 			j++;
 			i++;
 		}

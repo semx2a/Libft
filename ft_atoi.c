@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sozcan <seozcan@student.42.fr>             +#+  +:+       +#+        */
+/*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 15:08:57 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/20 16:21:34 by sozcan           ###   ########.fr       */
+/*   Created: 2021/09/29 17:09:55 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/12 15:01:16 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int	ft_atoi(const char *str)
 	{
 		if (str[i] == 45)
 			n *= -1;
-		else if (str[i + 1] == 43 || str[i + 1] == 45)
-			return (0);
 		i++;
 	}
 	while (str[i] >= 48 && str[i] <= 57)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sozcan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 15:10:46 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/15 20:19:34 by sozcan           ###   ########.fr       */
+/*   Created: 2021/10/12 16:56:53 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/12 16:57:42 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	while (s1[i] && i < n)
-	{	
+	{
 		if (s1[i] > s2[i])
 			return (1);
 		else if (s1[i] < s2[i])

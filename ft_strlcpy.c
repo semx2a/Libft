@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sozcan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 20:37:39 by sozcan            #+#    #+#             */
-/*   Updated: 2021/09/18 18:51:54 by sozcan           ###   ########.fr       */
+/*   Created: 2021/10/12 16:45:26 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/13 16:02:55 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libc.h>
 
 size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
 {
@@ -28,14 +27,5 @@ size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
 		j++;
 	}
 	dest[j] = '\0';
-	if (i >= destsize)
-		return (i);
 	return (i);
-}
-
-int	main(int ac, char **av)
-{
-	(void)ac;
-	printf("the value of ft_strlcpy is %lu\n", ft_strlcpy(av[1], av[2], strlen(av[1])));
-	printf("the value of strlcpy is %lu\n", strlcpy(av[3], av[4], strlen(av[3])));
 }
