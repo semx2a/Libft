@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 00:19:42 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/19 00:20:12 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/10/20 16:22:16 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,5 +193,16 @@ int	main()
 	start = 20;
 	len = strlen(s) - start;
 	printf("ft_substr returns\n>%s\n", ft_substr(s, start, len));
+	return (0);
+}
+
+int	main()
+{
+	char const	*s1;
+	char const	*s2;
+
+	s1 = "this is a";
+	s2 = " test string ffs.";
+	printf("ft_strjoin returns\n>%s\n", ft_strjoin(s1, s2));
 	return (0);
 }
