@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:51:07 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/23 13:58:27 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/10/24 22:14:58 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 
 	i = -1;
-	while (str[++i])
-		if (str[i] == c)
+	while (s[++i])
+		if (s[i] == c)
 			return ((char *)s + i);
-	return (NULL);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 17:23:11 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/18 12:21:33 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/10/24 21:43:28 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	if (count == 0 || size == 0)
 		return (NULL);
 	ptr = malloc(arr);
-	while (blocks--)
+	while (arr--)
 	{
 		*ptr = '\0';
 		ptr++;
