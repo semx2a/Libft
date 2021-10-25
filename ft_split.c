@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 22:05:07 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/24 23:58:55 by seozcan          ###   ########.fr       */
+/*   Created: 2021/10/25 14:23:41 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/25 15:24:24 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <stdlib>
 
-char	 *ft_strtrim(char const *s1, char const *set)
+char	**ft_split(char const *s, char a)
 {
-	char	*s2;
+	char	**d;
+	size_t	tabs;
 	int	i;
 	int	j;
 
 	i = -1;
 	j = 0;
-	if (!*s1 || !*set)
-		return (NULL);
-	while (s1[++i])
-		if (ft_strchr(set, s1[i]) != 0)
-			j++;
-	s2 = (char *)malloc(sizeof(char) * (i - j) + 1);
-	i = -1;
-	j = -1;
-	while (s1[++i]) 
-		if (ft_strchr(set, s1[i]) == 0)
-			s2[++j] = s1[i];
-	s2[++j] = '\0';
-	return (s2);
+	if (!*s || !a)
+		return (0);
+	while (s[++i])
+		if (ft_strchr(s + i, a) == 0)
+			tabs++;
+	d =
+	
+	
+
+}
+
+int	main()
+{
+	char const	*s;
+	char	a;
+
+	*s = "ceci;est;une;chaine;de;test";
+	a = ';';
+	ft_split(s, a);
+	return (0);
+
+
+
 }
