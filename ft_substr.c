@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 23:24:30 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/19 00:22:42 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/10/26 18:49:47 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s || len <= 0)
 		return (NULL);
-	d = (char *)malloc(len + 1);
+	d = (char *)malloc(sizeof(char) * len + 1);
 	while (len--)
 	{
 		d[i] = s[start];

@@ -6,43 +6,53 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:23:41 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/25 15:24:24 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/10/29 21:37:07 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib>
+#include <stdlib.h>
 
+static char	**ft_substrcpy(char const *s, char a, char **d, size_t t_count)
+{	
+	size_t	w_count;
+	int	len;
+	int	i;
+
+	len = 0;
+	w_count = 0;
+	i = 0;
+	while (s[i++])
+		len++;
+	while (s[--len] && t_count)
+	{
+		if (ft_strrchr(&a, s[len]) != 0)
+		{
+			d[--t_count] = ft_substr(s, len + 1, w_count);
+			w_count = 0;
+			len--;
+		}
+		w_count++;
+	}
+	d[--t_count] = ft_substr(s, len + 1, w_count);
+	return (d);
+}
 char	**ft_split(char const *s, char a)
 {
 	char	**d;
-	size_t	tabs;
+	size_t	t_count;
 	int	i;
-	int	j;
 
-	i = -1;
-	j = 0;
+	t_count = 0;
+	i = 0;
 	if (!*s || !a)
 		return (0);
-	while (s[++i])
-		if (ft_strchr(s + i, a) == 0)
-			tabs++;
-	d =
-	
-	
-
-}
-
-int	main()
-{
-	char const	*s;
-	char	a;
-
-	*s = "ceci;est;une;chaine;de;test";
-	a = ';';
-	ft_split(s, a);
-	return (0);
-
-
-
+	while (s[i++])
+		if (ft_strchr(&a, s[i]) != 0)
+			t_count++;
+	t_count++;
+	d = (char **)malloc(sizeof(char *) * (t_count + 1));
+	d[t_count] = 0;
+	d = ft_substrcpy(s, a, d, t_count);
+	return (d);
 }
