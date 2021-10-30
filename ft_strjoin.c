@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:16:06 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/20 16:28:06 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/10/30 17:32:54 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s3;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;

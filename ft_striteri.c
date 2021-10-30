@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:54:37 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/30 17:34:27 by seozcan          ###   ########.fr       */
+/*   Created: 2021/10/30 16:45:30 by seozcan           #+#    #+#             */
+/*   Updated: 2021/10/30 17:38:42 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strrchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i--)
-		if (s[i] == c)
-			return ((char *)s + i);
-	return (NULL);
+	i = -1;
+	if (s)
+		while (s[++i])
+			f(i, s + i);
 }

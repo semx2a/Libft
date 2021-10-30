@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:23:41 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/29 21:37:07 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/10/30 17:32:32 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 static char	**ft_substrcpy(char const *s, char a, char **d, size_t t_count)
 {	
 	size_t	w_count;
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 
 	len = 0;
 	w_count = 0;
@@ -37,11 +37,12 @@ static char	**ft_substrcpy(char const *s, char a, char **d, size_t t_count)
 	d[--t_count] = ft_substr(s, len + 1, w_count);
 	return (d);
 }
+
 char	**ft_split(char const *s, char a)
 {
 	char	**d;
 	size_t	t_count;
-	int	i;
+	int		i;
 
 	t_count = 0;
 	i = 0;
