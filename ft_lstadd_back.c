@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 16:56:53 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/07 12:44:02 by seozcan          ###   ########.fr       */
+/*   Created: 2021/11/04 15:31:52 by seozcan           #+#    #+#             */
+/*   Updated: 2021/11/04 19:03:23 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	size_t	i;
+	t_list	*last_elem;
 
-	i = 0;
-	while (i < n)
+	if (alst)
 	{
-		if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
-		i++;
+		if (*alst == NULL)
+			*alst = new;
+		else
+		{
+			last_elem = ft_lstlast(*alst);
+			last_elem->next = new;
+		}
 	}
-	return (0);
 }

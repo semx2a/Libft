@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 16:56:53 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/07 12:44:02 by seozcan          ###   ########.fr       */
+/*   Created: 2021/11/02 13:01:20 by seozcan           #+#    #+#             */
+/*   Updated: 2021/11/04 19:01:04 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
+	t_list	*new_elem;
 
-	i = 0;
-	while (i < n)
-	{
-		if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
-		i++;
-	}
-	return (0);
+	new_elem = (t_list *)malloc(sizeof(t_list));
+	if (!new_elem)
+		return (0);
+	new_elem->content = content;
+	new_elem->next = NULL;
+	return (new_elem);
 }

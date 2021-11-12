@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 16:56:53 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/07 12:44:02 by seozcan          ###   ########.fr       */
+/*   Created: 2021/11/04 18:04:40 by seozcan           #+#    #+#             */
+/*   Updated: 2021/11/04 19:05:00 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	if (lst)
 	{
-		if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
-		i++;
+		while (lst)
+		{
+			f(lst->content);
+			lst = lst->next;
+		}
 	}
-	return (0);
 }

@@ -6,21 +6,25 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 14:54:37 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/30 17:34:27 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/07 12:30:35 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
+	char	a;
 
 	i = 0;
+	a = c;
 	while (s[i])
 		i++;
+	if (s[i] == '\0' && a == 0)
+		return ((char *)s + ft_strlen(s));
 	while (i--)
-		if (s[i] == c)
+		if (s[i] == a)
 			return ((char *)s + i);
 	return (NULL);
 }

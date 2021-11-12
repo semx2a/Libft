@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 22:24:57 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/25 13:52:55 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/02 13:02:39 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 typedef struct s_list
 {
 	void			*content;
-	struct slist	*next;
+	struct s_list	*next;
 }	t_list;
 
 int		ft_toupper(int c);

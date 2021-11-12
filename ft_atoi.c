@@ -6,9 +6,11 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 17:09:55 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/12 15:01:16 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/05 12:13:53 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -27,7 +29,7 @@ int	ft_atoi(const char *str)
 			n *= -1;
 		i++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
+	while (ft_isdigit(str[i]))
 	{
 		r = r * 10 + str[i] - 48;
 		i++;

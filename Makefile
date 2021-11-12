@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/24 23:56:53 by seozcan           #+#    #+#              #
-#    Updated: 2021/10/30 17:11:38 by seozcan          ###   ########.fr        #
+#    Updated: 2021/11/05 12:20:19 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c\
 ft_substr.c ft_tolower.c ft_toupper.c ft_split.c ft_itoa.c ft_strmapi.c\
 ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
 CC	= gcc
 
 CFLAGS	= -Wall -Wextra -Werror -c
@@ -29,18 +32,26 @@ ARFLAGS	= rcs
 
 OBJS	= ${SRCS:%.c=%.o}
 
-RM	= rm -f
+OBJS_B	= ${SRCS_B:%.c=%.o}
 
-all:		${NAME}
+RM	= rm -f
 
 ${NAME}:	${OBJS}
 			${AR} ${ARFLAGS} ${NAME} ${OBJS}
 
-${OBJS}:	$(SRCS)
-			$(CC) $(CFLAGS) $(SRCS)
+${OBJS}:	${SRCS}
+			${CC} ${CFLAGS} ${SRCS}
+
+${OBJS_B}:	${SRCS_B}
+			${CC} ${CFLAGS} ${SRCS_B}
+
+all:		${NAME}
+
+bonus:		${OBJS} ${OBJS_B}
+			${AR} ${ARFLAGS} ${NAME} ${OBJS} ${OBJS_B}
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${OBJS_B}
 
 fclean:		clean
 			${RM} ${NAME}
