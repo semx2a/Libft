@@ -53,6 +53,7 @@ dkms.conf
 
 #Directories
 SUBJETCS
+.vscode
 
 #MacOS
 .DS_Store
