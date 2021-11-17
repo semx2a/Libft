@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 23:24:30 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/11 16:00:08 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/16 15:59:27 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (d);
 	}
 	d = (char *)malloc(sizeof(char) * ((slen - start) + 1));
-	while (len-- && start < slen)
+	while (len-- && slen >= start)
 		d[i++] = s[start++];
 	d[i] = '\0';
 	return (d);
