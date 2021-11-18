@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:51:07 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/07 12:27:23 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/18 00:55:25 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	a;
 
 	i = -1;

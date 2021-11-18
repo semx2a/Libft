@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 18:27:13 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/05 12:13:01 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/18 01:11:38 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_lst;
 	t_list	*new_elem;
 
+	new_elem = 0;
 	if (!f || !del)
 		return (NULL);
 	new_lst = NULL;
 	while (lst)
 	{
-		if (!(new_elem = ft_lstnew(f(lst->content))))
+		new_elem = ft_lstnew(f(lst->content));
+		if (!new_elem)
 		{
 			ft_lstclear(&new_lst, del);
 			return (NULL);
