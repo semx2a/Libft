@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 17:29:49 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/07 12:14:57 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/19 13:29:03 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const char	*str1;
-	const char	*str2;
+	const char		*d1;
+	const char		*d2;
+	unsigned int	i;
 
-	str1 = s1 - 1;
-	str2 = s2 - 1;
-	while (str1++ && str2++ && n--)
-		if (*str1 != *str2)
-			return (*str2 - *str1);
+	d1 = s1;
+	d2 = s2;
+	i = -1;
+	while (++i < n)
+		if (d1[i] != d2[i])
+			return ((unsigned char)d1[i] - (unsigned char)d2[i]);
 	return (0);
 }

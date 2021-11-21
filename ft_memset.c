@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 17:14:02 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/07 11:51:41 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/19 13:18:15 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	str = (unsigned char *)b;
 	while (len--)
 		*str++ = (unsigned char)c;
-	return (str);
+	return (b);
 }

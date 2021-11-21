@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 22:05:07 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/12 17:53:54 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/22 00:01:37 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = -1;
 	j = -1;
 	s2 = "NULL";
-	if (s1)
+	if (s1 && set)
 	{
 		while (s1[++i])
 			if (ft_strchr(set, s1[i]) != 0)
 				j++;
-		s2 = (char *)malloc(sizeof(char) * (i - j) + 1);
+		s2 = (char *)malloc(sizeof(char) * ((i - j) + 1));
 		i = -1;
 		j = -1;
 		while (s1[++i])
 			if (ft_strchr(set, s1[i]) == 0)
-				s2[++j] = s1[i];
+				s2[++j] = (char)s1[i];
 	}
 	s2[++j] = '\0';
 	return (s2);

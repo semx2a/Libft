@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/24 23:56:53 by seozcan           #+#    #+#              #
-#    Updated: 2021/11/05 12:20:19 by seozcan          ###   ########.fr        #
+#    Updated: 2021/11/18 21:13:10 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,13 +36,13 @@ OBJS_B	= ${SRCS_B:%.c=%.o}
 
 RM	= rm -f
 
-${NAME}:	${OBJS}
+$(NAME):	${OBJS}
 			${AR} ${ARFLAGS} ${NAME} ${OBJS}
 
-${OBJS}:	${SRCS}
+$(OBJS):	${SRCS}
 			${CC} ${CFLAGS} ${SRCS}
 
-${OBJS_B}:	${SRCS_B}
+$(OBJS_B):	${SRCS_B}
 			${CC} ${CFLAGS} ${SRCS_B}
 
 all:		${NAME}
