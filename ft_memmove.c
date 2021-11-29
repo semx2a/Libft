@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:39:04 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/16 16:20:54 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/26 17:09:06 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	d = dst;
 	s = src;
+	if (!dst && !src)
+		return (NULL);
 	if (d < s)
 		while (len--)
 			*d++ = *s++;

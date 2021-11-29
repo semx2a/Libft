@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 17:11:50 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/30 17:30:36 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/26 18:42:58 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s)
+		return ;
 	i = -1;
 	while (s[++i])
 		ft_putchar_fd(s[i], fd);

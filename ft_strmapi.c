@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 12:27:45 by seozcan           #+#    #+#             */
-/*   Updated: 2021/10/30 17:33:45 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/26 18:39:13 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*d;
 
+	if (!s)
+		return (NULL);
 	i = -1;
 	d = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!d)

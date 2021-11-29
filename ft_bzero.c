@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 15:25:53 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/04 19:02:07 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/27 14:57:11 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 void	ft_bzero(void *s, size_t n)
 {
 	if (n > 0)
-		ft_memset(s, '\0', n);
+		ft_memset(s, 0, n);
 }
