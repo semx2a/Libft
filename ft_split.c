@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:23:41 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/29 20:45:52 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/30 17:00:11 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_count(char const *s, char a)
 	return (count);
 }
 
-static void	ft_freed(char **d, long int j)
+static char	**ft_freed(char **d, long int j)
 {
 	while (j)
 	{
@@ -39,6 +39,7 @@ static void	ft_freed(char **d, long int j)
 		j--;
 	}
 	free(d);
+	return (0);
 }
 
 static char	**ft_substrcpy(char const *s, char a, char **d)
@@ -57,10 +58,7 @@ static char	**ft_substrcpy(char const *s, char a, char **d)
 			w_count = ft_count(s + i, a);
 			d[j] = ft_substr(s + i, 0, w_count);
 			if ((long)ft_strlen(d[j]) != w_count)
-			{
-				ft_freed(d, j);
-				return (NULL);
-			}
+				return(ft_freed(d, j));
 			i = i + w_count;
 			w_count = 0;
 			j++;
@@ -84,16 +82,31 @@ char	**ft_split(char const *s, char a)
 		if (!ft_strchr(&a, s[i]) && ft_strchr(&a, s[i + 1]))
 			t_count++;
 	d = (char **)malloc(sizeof(char *) * (t_count + 1));
-	if (d)
+	if (!d)
+		return (NULL);
+	d[t_count] = 0;
+	d = ft_substrcpy(s, a, d);
+	return (d);
+}
+
+#include <libc.h>
+
+int	main(int ac, char **av)
+{
+	//char const	*s = "---1-2-3-4-5-6-7-8--8-8--8-4------4--4---";
+	//char	a = '-';
+	int 	i = 0;
+	char	**d;
+
+	//d = ft_split(s, a);
+	d = ft_split(av[1], av[2][0]);
+	if (!d)
+		return (0);
+	printf("ft_split returns\n");
+	while (d[i])
 	{
-		d[t_count] = NULL;
-		if (!t_count)
-			return (d);
-		else if (!ft_strchr(s, a))
-			d[0] = ft_strdup(s);
-		else
-			d = ft_substrcpy(s, a, d);
-		return (d);
+		printf("i=%i >%s\n", i, d[i]);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
