@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:07:28 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/29 20:24:30 by seozcan          ###   ########.fr       */
+/*   Updated: 2021/11/30 19:43:19 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	i = ft_strlen(dst);
 	j = 0;
+	if (i >= dstsize)
+		return (dstsize + ft_strlen(src));
 	if (dstsize == 0)
 		return (ft_strlen(src));
 	while (src[j] && i + j < dstsize - 1)
@@ -28,7 +30,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		j++;
 	}
 	dst[i + j] = '\0';
-	if (i + j >= dstsize)
-		return (dstsize + ft_strlen(src));
 	return (i + ft_strlen(src));
 }
