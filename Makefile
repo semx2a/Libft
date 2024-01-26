@@ -5,57 +5,85 @@
 #                                                     +:+ +:+         +:+      #
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/24 23:56:53 by seozcan           #+#    #+#              #
-#    Updated: 2021/11/27 14:37:01 by seozcan          ###   ########.fr        #
+#    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
+#    Updated: 2024/01/26 14:56:13 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
+include settings.mk
 
-SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
-ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c\
-ft_memmove.c ft_memset.c ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c\
-ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c\
-ft_substr.c ft_tolower.c ft_toupper.c ft_split.c ft_itoa.c ft_strmapi.c\
-ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+# :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::DIRECTORIES::
 
-SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
-ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+S		=	src/
+O		=	obj/
+I 		=	inc/
+D 		=	dep/
 
-CC	= gcc
+# ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::CUSTOM FLAGS::
 
-CFLAGS	= -Wall -Wextra -Werror -c
+CFLAGS	+=	-I$I
 
-AR	= ar
+CLFAGS	+=	-Wconversion
 
-ARFLAGS	= rcs
+CFLAGS	+=	-g3 -fsanitize=address
 
-OBJS	= ${SRCS:%.c=%.o}
+RM		=	/bin/rm -rf
 
-OBJS_B	= ${SRCS_B:%.c=%.o}
+SPACE 	= 	awk -F ':' '{ printf "%-61s %s\n", $$1 ":", $$2 }'
 
-RM	= rm -f
 
-$(NAME):	${OBJS}
-			${AR} ${ARFLAGS} ${NAME} ${OBJS}
+# :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::OBJECTS::
 
-$(OBJS):	${SRCS}
-			${CC} ${CFLAGS} ${SRCS}
+OBJ		=	$(SRC:$S%=$O%.o)
 
-$(OBJS_B):	${SRCS_B}
-			${CC} ${CFLAGS} ${SRCS_B}
+DEP		=	$(SRC:$S%=$D%.d)
 
-all:		${NAME}
+# :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::RULES::
 
-bonus:		${OBJS} ${OBJS_B}
-			${AR} ${ARFLAGS} ${NAME} ${OBJS} ${OBJS_B}
+all: header h2 message $(NAME)
 
-clean:
-			${RM} ${OBJS} ${OBJS_B}
+$O:
+	@mkdir -p $@
+	@echo "$(HIGREEN)creating $O folder:[OK]$(NO_COLOR)" | $(SPACE)
 
-fclean:		clean
-			${RM} ${NAME}
+$(OBJ): | $O
 
-re:		fclean all
+$(OBJ): $O%.o: $S%
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(HIGREEN)compiling $<:[OK]$(NO_COLOR)" | $(SPACE)
 
-.PHONY:		all clean fclean re
+$D:
+	@mkdir -p $@
+	@echo "$(HIGREEN)creating $D folder:[OK]$(NO_COLOR)" | $(SPACE)
+
+$(DEP): | $D
+
+$(DEP): $D%.d: $S%
+	@$(CC) $(CFLAGS) -MM -MF $@ -MT "$O$*.o $@" $<
+	@echo "$(HIGREEN)compiling $<:[OK]$(NO_COLOR)" | $(SPACE)
+
+
+$(NAME): $(OBJ) $(DEP)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+	@echo "$(HIGREEN)compiling $(NAME):[OK]$(NO_COLOR)" | $(SPACE)
+
+cleanobj:
+	@$(RM) $(O)
+	@echo "$(HIORANGE)removing $O folder:[RM]$(NO_COLOR)" | $(SPACE)
+
+
+cleandep:
+	@$(RM) $(D)
+	@echo "$(HIORANGE)removing $D folder:[RM]$(NO_COLOR)" | $(SPACE)
+
+clean: cleanobj cleandep
+
+fclean: clean
+	@$(RM) $(NAME)
+	@echo "$(HIORANGE)removing $(NAME):[RM]$(NO_COLOR)" | $(SPACE)
+
+re:	header fclean all
+
+include colors.mk output.mk header.mk
+
+.PHONY:	all clean fclean re
