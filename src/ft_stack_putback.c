@@ -6,13 +6,13 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 17:39:33 by seozcan           #+#    #+#             */
-/*   Updated: 2022/12/13 15:10:42 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/01/30 13:07:18 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void	put_back(t_stack *stack, void *content)
+void	putback_stack(t_stack *stack, void *content)
 {
 	t_node	*new;
 

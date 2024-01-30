@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 17:51:29 by seozcan           #+#    #+#             */
-/*   Updated: 2022/10/14 18:12:29 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/01/30 13:08:18 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	push(t_stack *a, t_stack *b)
 		if (!tmp)
 			return ;
 		content = tmp->data;
-		put_front(a, content);
+		putfront_stack(a, content);
 		b->head = b->head->next;
 		if (b->head)
 			b->head->prev = NULL;

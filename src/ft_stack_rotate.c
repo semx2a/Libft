@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 18:03:30 by seozcan           #+#    #+#             */
-/*   Updated: 2022/10/14 18:12:47 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/01/30 13:07:46 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	rotate(t_stack *s)
 		content = tmp->data;
 		s->head = tmp->next;
 		s->head->prev = NULL;
-		put_back(s, content);
+		putback_stack(s, content);
 		free(tmp);
 	}
 }

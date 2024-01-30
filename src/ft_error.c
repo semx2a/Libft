@@ -6,14 +6,14 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 18:15:54 by seozcan           #+#    #+#             */
-/*   Updated: 2023/01/11 17:42:33 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/01/30 14:45:41 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
 int	ft_error(char *bin_name, char *err_msg)
-{	
+{
 	if (err_msg)
 	{	
 		ft_putstr_fd(bin_name, STDERR_FILENO);

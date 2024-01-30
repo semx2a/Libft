@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2024/01/26 14:56:13 by seozcan          ###   ########.fr        #
+#    Updated: 2024/01/30 12:52:50 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ DEP		=	$(SRC:$S%=$D%.d)
 
 # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::RULES::
 
-all: header h2 message $(NAME)
+all: h2 message $(NAME)
 
 $O:
 	@mkdir -p $@
@@ -76,13 +76,13 @@ cleandep:
 	@$(RM) $(D)
 	@echo "$(HIORANGE)removing $D folder:[RM]$(NO_COLOR)" | $(SPACE)
 
-clean: cleanobj cleandep
+clean: h2 cleanobj cleandep
 
-fclean: clean
+fclean: h2 clean
 	@$(RM) $(NAME)
 	@echo "$(HIORANGE)removing $(NAME):[RM]$(NO_COLOR)" | $(SPACE)
 
-re:	header fclean all
+re:	h2 fclean all
 
 include colors.mk output.mk header.mk
 

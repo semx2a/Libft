@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 22:24:57 by seozcan           #+#    #+#             */
-/*   Updated: 2023/01/09 17:25:26 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/01/30 13:24:13 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 void			*ft_calloc(size_t count, size_t size);
+void			*xmalloc(size_t size);
 void			free_tab(int **tab, int size);
 void			ft_free_stab(char **str);
 void			print_stab(char **stab);
@@ -128,8 +129,8 @@ t_node			*node_map(t_node *nodes, void *(*f)(void *),
 size_t			node_size(t_node *n);
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::STACKS::
-void			put_front(t_stack *stack, void *content);
-void			put_back(t_stack *stack, void *content);
+void			putfront_stack(t_stack *stack, void *content);
+void			putback_stack(t_stack *stack, void *content);
 void			init_stack(t_stack *stack);
 void			free_stack(t_stack *stack);
 void			reverse(t_stack *s);
