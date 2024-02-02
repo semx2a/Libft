@@ -6,11 +6,11 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:57:50 by abonard           #+#    #+#             */
-/*   Updated: 2023/01/02 20:19:33 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/02 17:34:55 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 static int	recursive(char **line, size_t index, int fd)
 {

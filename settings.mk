@@ -53,15 +53,15 @@ SRC		=	$Sft_allocate_tab.c \
 			$Sft_putnbr_fd.c \
 			$Sft_putstr_fd.c \
 			$Sft_split.c \
-			$Sft_stack_free.c \
-			$Sft_stack_init.c \
-			$Sft_stack_push.c \
-			$Sft_stack_putback.c \
-			$Sft_stack_putfront.c \
-			$Sft_stack_reverse.c \
-			$Sft_stack_rotate.c \
-			$Sft_stack_size.c \
-			$Sft_stack_swap.c \
+			$Sft_double_list_free.c \
+			$Sft_double_list_init.c \
+			$Sft_double_list_push.c \
+			$Sft_double_list_putback.c \
+			$Sft_double_list_putfront.c \
+			$Sft_double_list_reverse.c \
+			$Sft_double_list_rotate.c \
+			$Sft_double_list_size.c \
+			$Sft_double_list_swap.c \
 			$Sft_strchr.c \
 			$Sft_strcmp.c \
 			$Sft_strcpy.c \

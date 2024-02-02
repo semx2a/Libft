@@ -6,11 +6,11 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 18:36:33 by seozcan           #+#    #+#             */
-/*   Updated: 2022/12/13 15:09:34 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/02 17:34:55 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 t_node	*new_node(void *content)
 {

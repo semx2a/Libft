@@ -6,11 +6,11 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 17:11:50 by seozcan           #+#    #+#             */
-/*   Updated: 2021/11/26 18:42:58 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/02 17:34:55 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

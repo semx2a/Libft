@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_putback.c                                 :+:      :+:    :+:   */
+/*   ft_double_list_free.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 17:39:33 by seozcan           #+#    #+#             */
-/*   Updated: 2024/01/30 13:07:18 by seozcan          ###   ########.fr       */
+/*   Created: 2024/02/02 17:33:39 by seozcan           #+#    #+#             */
+/*   Updated: 2024/02/02 17:34:55 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-void	putback_stack(t_stack *stack, void *content)
+void	free_double_list(t_double_list *double_list)
 {
-	t_node	*new;
+	t_node	*tmp;
 
-	new = malloc(sizeof(t_node));
-	if (!new)
-		return ;
-	new = new_node(content);
-	if (stack->tail)
-		stack->tail->next = new;
-	else
-		stack->head = new;
-	stack->tail = new;
+	while (double_list->head)
+	{
+		tmp = double_list->head;
+		double_list->head = double_list->head->next;
+		free(tmp);
+	}
+	double_list->head = NULL;
+	double_list->tail = NULL;
+	free(double_list);
 }

@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_size.c                                    :+:      :+:    :+:   */
+/*   ft_double_list_rotate.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 17:48:23 by seozcan           #+#    #+#             */
-/*   Updated: 2022/10/14 18:19:37 by seozcan          ###   ########.fr       */
+/*   Created: 2024/02/02 17:34:19 by seozcan           #+#    #+#             */
+/*   Updated: 2024/02/02 17:34:55 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-size_t	stack_size(t_stack *stack)
+void	rotate(t_double_list *s)
 {
-	size_t	size;
+	void	*content;
 	t_node	*tmp;
 
-	size = 0;
-	tmp = stack->head;
-	if (stack)
+	if (double_list_size(s) > 1)
 	{
-		if (tmp)
-		{
-			while (tmp)
-			{
-				tmp = tmp->next;
-				size++;
-			}
-			return (size);
-		}
+		tmp = s->head;
+		if (!tmp)
+			return ;
+		content = tmp->data;
+		s->head = tmp->next;
+		s->head->prev = NULL;
+		putback_double_list(s, content);
+		free(tmp);
 	}
-	return (0);
 }

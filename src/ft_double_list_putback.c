@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_reverse.c                                 :+:      :+:    :+:   */
+/*   ft_double_list_putback.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 17:56:10 by seozcan           #+#    #+#             */
-/*   Updated: 2024/01/30 13:08:32 by seozcan          ###   ########.fr       */
+/*   Created: 2024/02/02 17:34:00 by seozcan           #+#    #+#             */
+/*   Updated: 2024/02/02 17:34:55 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-void	reverse(t_stack *s)
+void	putback_double_list(t_double_list *double_list, void *content)
 {
-	t_node	*tmp;
-	void	*content;
+	t_node	*new;
 
-	if (stack_size(s) > 1)
-	{
-		tmp = s->tail;
-		if (!tmp)
-			return ;
-		content = tmp->data;
-		s->tail = tmp->prev;
-		s->tail->next = NULL;
-		putfront_stack(s, content);
-		free(tmp);
-	}
+	new = malloc(sizeof(t_node));
+	if (!new)
+		return ;
+	new = new_node(content);
+	if (double_list->tail)
+		double_list->tail->next = new;
+	else
+		double_list->head = new;
+	double_list->tail = new;
 }

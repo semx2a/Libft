@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2024/01/30 12:52:50 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/02 18:15:26 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ CFLAGS	+=	-I$I
 
 CLFAGS	+=	-Wconversion
 
-CFLAGS	+=	-g3 -fsanitize=address
+CFLAGS	+=	-g3
+
+#CFLAGS	+=	-fsanitize=address
 
 RM		=	/bin/rm -rf
 

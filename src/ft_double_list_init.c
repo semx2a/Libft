@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_free.c                                    :+:      :+:    :+:   */
+/*   ft_double_list_init.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 17:46:12 by seozcan           #+#    #+#             */
-/*   Updated: 2022/10/14 17:47:39 by seozcan          ###   ########.fr       */
+/*   Created: 2024/02/02 17:33:46 by seozcan           #+#    #+#             */
+/*   Updated: 2024/02/02 17:34:55 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
 
-void	free_stack(t_stack *stack)
+#include "libft.h"
+
+void	init_double_list(t_double_list *double_list)
 {
-	t_node	*tmp;
-
-	while (stack->head)
-	{
-		tmp = stack->head;
-		stack->head = stack->head->next;
-		free(tmp);
-	}
-	stack->head = NULL;
-	stack->tail = NULL;
-	free(stack);
+	double_list->head = NULL;
+	double_list->tail = NULL;
 }
