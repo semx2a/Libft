@@ -68,6 +68,7 @@ SRC		=	$Sft_allocate_tab.c \
 			$Sft_strdup.c \
 			$Sft_strisdigit.c \
 			$Sft_striteri.c \
+			$Sft_strjoin_free.c \
 			$Sft_strjoin.c \
 			$Sft_strlcat.c \
 			$Sft_strlcpy.c \

@@ -6,7 +6,7 @@
 #    By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/07 19:14:12 by seozcan           #+#    #+#              #
-#    Updated: 2024/02/02 18:15:26 by seozcan          ###   ########.fr        #
+#    Updated: 2024/02/06 17:55:42 by seozcan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,15 @@ CFLAGS	+=	-I$I
 
 CLFAGS	+=	-Wconversion
 
-CFLAGS	+=	-g3
-
-#CFLAGS	+=	-fsanitize=address
+ifeq (debug, $(filter debug,$(MAKECMDGOALS)))
+	CFLAGS	+=	-g3
+endif
+ifeq (sanadd, $(filter sanadd,$(MAKECMDGOALS)))
+	CFLAGS	+=	-fsanitize=address
+endif
+ifeq (santhread, $(filter santhread,$(MAKECMDGOALS)))
+	CFLAGS	+=	-fsanitize=thread
+endif
 
 RM		=	/bin/rm -rf
 
@@ -68,6 +74,12 @@ $(DEP): $D%.d: $S%
 $(NAME): $(OBJ) $(DEP)
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 	@echo "$(HIGREEN)compiling $(NAME):[OK]$(NO_COLOR)" | $(SPACE)
+
+debug:		all
+	
+sanadd:		all
+	
+santhread:	all
 
 cleanobj:
 	@$(RM) $(O)

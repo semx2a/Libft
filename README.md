@@ -44,4 +44,3 @@ Throughout the development of Libft, I have gained proficiency in the following 
 - **Memory Management:** Mastered dynamic memory allocation and deallocation.
 - **Makefile Usage:** Created a Makefile for project compilation and management.
 - **Git Version Control:** Managed project versions and collaborated through Git repositories.
-

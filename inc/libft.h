@@ -6,7 +6,7 @@
 /*   By: seozcan <seozcan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 22:24:57 by seozcan           #+#    #+#             */
-/*   Updated: 2024/02/02 17:27:15 by seozcan          ###   ########.fr       */
+/*   Updated: 2024/02/06 17:30:18 by seozcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ unsigned int	ft_atoi_hexa(const char *str);
 
 void			ft_bzero(void *s, size_t n);
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+char			*ft_strjoin_free(char const *s1, char const *s2);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
