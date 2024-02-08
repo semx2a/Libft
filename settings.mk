@@ -89,7 +89,7 @@ SRC		=	$Sft_allocate_tab.c \
 CC		=	gcc
 
 ifeq ($(UNAME), Darwin)
-	CC = clang
+CC	=	clang
 endif
 
 CFLAGS	=	-Wall -Wextra -Werror
